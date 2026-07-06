@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Havenline Reservation Secure Stub - SA-676</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      background-color: #060a08;
+      color: #ffffff;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrapper {
+      width: 100%;
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: #0a0f0d;
+      border: 1px solid rgba(52, 211, 153, 0.2);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+    .header {
+      padding: 30px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+    }
+    .top-glow {
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #00C853, transparent);
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .logo span {
+      color: #00C853;
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      background-color: rgba(0, 200, 83, 0.1);
+      border: 1px solid rgba(0, 200, 83, 0.2);
+      color: #00C853;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 6px 14px;
+      border-radius: 30px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .body-content {
+      padding: 30px;
+      font-size: 12px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.85);
+    }
+    .grid-metrics {
+      display: grid;
+      grid-template-cols: 1fr 1fr;
+      gap: 15px;
+      margin: 20px 0;
+    }
+    .metric-card {
+      background-color: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+    }
+    .metric-label {
+      font-size: 9px;
+      color: rgba(255, 255, 255, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+    .metric-value {
+      font-size: 18px;
+      font-weight: 900;
+      color: #ffffff;
+      margin-top: 5px;
+    }
+    .details-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+    }
+    .details-table td {
+      padding: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .details-table td.label {
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      width: 130px;
+    }
+    .details-table td.value {
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 12px;
+    }
+    .subsidized-box {
+      background-color: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 25px 0;
+    }
+    .subsidized-header {
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #00C853;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+    .invoice-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 11px;
+    }
+    .invoice-row.total {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 12px;
+      font-weight: 900;
+      color: #00C853;
+      font-size: 13px;
+    }
+    .footer {
+      padding: 20px 30px;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+    .footer-text {
+      font-size: 9px;
+      color: rgba(255, 255, 255, 0.35);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="header">
+      <div class="top-glow"></div>
+      <div class="logo">HAVEN<span>LINE</span> // CLINICAL_RECIEPT</div>
+      <div class="status-badge">RESERVATION SECURED & LOCK CONFIRMED</div>
+    </div>
+
+    <div class="body-content">
+      <p>Dear Ishant,</p>
+      <p>Your outpatient clinic reservation lock has been verified and synced across the Havenline cloud frame. Below are your unique queue tickets and clinic details.</p>
+
+      <div class="grid-metrics">
+        <div class="metric-card">
+          <div class="metric-label">Queue Spot Token</div>
+          <div class="metric-value" style="color: #00C853;">SA-676</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Patients Ahead</div>
+          <div class="metric-value">1</div>
+        </div>
+      </div>
+
+      <table class="details-table">
+        <tr>
+          <td class="label">Hospital / Node</td>
+          <td class="value">Satyawadi Raja Harishchandra Hospital (SRHC)</td>
+        </tr>
+        <tr>
+          <td class="label">Specialist</td>
+          <td class="value">Dr. S.B. Singh</td>
+        </tr>
+        <tr>
+          <td class="label">Department</td>
+          <td class="value">General Medicine</td>
+        </tr>
+        <tr>
+          <td class="label">Time slot</td>
+          <td class="value">11:00 AM</td>
+        </tr>
+        <tr>
+          <td class="label">Triage Urgency</td>
+          <td class="value" style="color: #00C853;">Medium</td>
+        </tr>
+      </table>
+
+      <div class="subsidized-box">
+        <div class="subsidized-header">Subsidized Invoice Summaries</div>
+        <div class="invoice-row">
+          <span>OPD CONSULTATION FEE:</span>
+          <span>₹20</span>
+        </div>
+        <div class="invoice-row">
+          <span>EST. DIAGNOSTICS (ECG/BLOOD):</span>
+          <span>₹40</span>
+        </div>
+        <div class="invoice-row">
+          <span>EST. MEDICATION STUB:</span>
+          <span>₹16</span>
+        </div>
+        <div class="invoice-row total">
+          <span>ESTIMATED TOTAL OUTLAY:</span>
+          <span>₹76</span>
+        </div>
+      </div>
+
+      <p style="font-size: 10px; color: rgba(255,255,255,0.4); text-align: center; margin-top: 30px;">
+        * Present this ticket stub code at reception. Ensure you arrive at least 15 minutes before the estimated turn time.
+      </p>
+    </div>
+
+    <div class="footer">
+      <div class="footer-text">
+        HAVENLINE CLINICAL TRIAGE INTELLIGENCE CORE SYSTEM<br>
+        SECURE INTAKE PORTAL v3 // TRANSACTION CERTIFIED BY LOCALHOST
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+    
