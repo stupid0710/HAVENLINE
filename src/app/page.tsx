@@ -96,7 +96,7 @@ export default function LandingPage() {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen relative overflow-hidden bg-[#C3FDBF]">
+    <div className="flex flex-col min-h-screen relative overflow-hidden bg-[#050807]">
       {/* Floating Ambient Parallax Orbs (Modern Landing Page Accent) */}
       <div 
         className="absolute top-[8%] left-[-15%] w-[45vw] h-[45vw] rounded-full bg-emerald-400/10 blur-[130px] pointer-events-none transition-transform duration-200 ease-out z-0"
@@ -153,15 +153,16 @@ export default function LandingPage() {
       <main className="flex-1">
         <section className="w-full min-h-[70vh] lg:h-[85vh] bg-transparent border-b border-slate-900/5 relative flex items-center overflow-hidden">
           {/* Background Spline Iframe wrapper - hidden on mobile */}
-          <div className="hidden lg:block lg:absolute inset-0 w-full lg:h-full z-0 pointer-events-auto">
+          <div className="hidden lg:block lg:absolute inset-0 w-full lg:h-full z-0 pointer-events-auto bg-[#050807]">
             <iframe
               src="https://my.spline.design/reededliquidglassprismherosectionconcept-swxMvxUaZwwFi8Bug4yX7t2d/"
               frameBorder="0"
               width="100%"
               height="100%"
-              style={{ border: 'none', width: '100%', height: '100%' }}
+              style={{ border: 'none', width: '100%', height: '100%', background: 'transparent' }}
               title="Spline 3D Hero Showcase"
               allow="autoplay; xr-spatial-tracking"
+              allowTransparency={true}
             />
           </div>
 
@@ -491,7 +492,7 @@ export default function LandingPage() {
             </div>
 
             {/* CENTER — Brain (fully interactive, nothing on top) */}
-            <div className="relative rounded-3xl overflow-hidden" style={{ height: '620px' }}>
+            <div className="relative rounded-3xl overflow-hidden bg-[#0a0f0d]" style={{ height: '620px' }}>
               {/* Soft edge fades that don't block pointer events */}
               <div className="absolute top-0 left-0 right-0 h-20 z-10 pointer-events-none" style={{ background: 'linear-gradient(to bottom, #0a0f0d, transparent)' }} />
               <div className="absolute bottom-0 left-0 right-0 h-20 z-10 pointer-events-none" style={{ background: 'linear-gradient(to top, #0a0f0d, transparent)' }} />
@@ -502,8 +503,9 @@ export default function LandingPage() {
                 src="https://my.spline.design/particleaibrain-uJC6LcfowrdX3fIqFj1o7F9t/"
                 frameBorder="0"
                 className="absolute inset-0 w-full h-full"
-                style={{ border: 'none' }}
+                style={{ border: 'none', background: 'transparent' }}
                 title="Particle AI Brain — Interactive"
+                allowTransparency={true}
               />
             </div>
 
