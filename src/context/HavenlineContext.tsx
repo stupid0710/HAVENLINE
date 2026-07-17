@@ -77,6 +77,49 @@ export const HavenlineProvider = ({ children }: { children: ReactNode }) => {
     );
   }, []);
 
+  // Dynamically translate mock hospital coordinates to be relative to the user's live retrieved location
+  useEffect(() => {
+    if (!userLocation || hospitals.length === 0) return;
+
+    // Reference coordinates (Delhi NCR centre)
+    const refLat = 28.854703;
+    const refLng = 77.088295;
+
+    // Calculate translation offset
+    const latOffset = userLocation.lat - refLat;
+    const lngOffset = userLocation.lng - refLng;
+
+    // Shift coordinates if offset is significant
+    const offsetLimit = 0.05; // ~5km
+    if (Math.abs(latOffset) > offsetLimit || Math.abs(lngOffset) > offsetLimit) {
+      console.warn(`[Havenline Geolocation] Translating clinic locations to be relative to user coordinates: ${userLocation.lat}, ${userLocation.lng}`);
+      
+      setHospitals((prevHospitals) => {
+        // Avoid infinite loop by checking if we have already translated them
+        const first = prevHospitals[0];
+        if (first && (first as any).translatedToLat === userLocation.lat && (first as any).translatedToLng === userLocation.lng) {
+          return prevHospitals;
+        }
+
+        return prevHospitals.map((h) => {
+          // Store original coordinates so we can re-translate without accumulating drift
+          const origLat = (h as any).originalLat || h.lat;
+          const origLng = (h as any).originalLng || h.lng;
+          
+          return {
+            ...h,
+            originalLat: origLat,
+            originalLng: origLng,
+            translatedToLat: userLocation.lat,
+            translatedToLng: userLocation.lng,
+            lat: userLocation.lat + (origLat - refLat),
+            lng: userLocation.lng + (origLng - refLng)
+          };
+        });
+      });
+    }
+  }, [userLocation, hospitals]);
+
   // Initialize state from LocalStorage on mount
   useEffect(() => {
     if (typeof window === 'undefined') return;
